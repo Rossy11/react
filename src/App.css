@@ -1,0 +1,15 @@
+.App {
+    padding: 100px;
+}
+.ant-table-pagination{
+    display: none;
+}
+.pages{
+    margin-top: 20px!important;
+    float: right;
+}
+.echarts{
+    width: 700px;
+    height:300px;
+    margin: 200px;
+}

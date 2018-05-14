@@ -1,0 +1,10 @@
+.tab{
+    color: #000;
+    height: 50px;
+    line-height: 50px;
+    display: block;
+    margin-left: 200px;
+}
+.active{
+    color: #f00;
+}
