@@ -32,7 +32,7 @@ class router1 extends Component {
         }
     }
     componentDidMount() {
-        axios.get("http://14.119.109.232:30666/UserInfo/").then(res => {
+        axios.get("xxxxxx").then(res => {
             console.log(res.data);
             this.setState({
                 allData: res.data,
