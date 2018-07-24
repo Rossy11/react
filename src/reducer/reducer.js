@@ -8,10 +8,12 @@ const reducer = (state = initMsg, action) => {
     switch (action.type) {
         case 'chinese':
             return {
+                ...state,
                 msg: '这是Redux啊'
             }
         case 'english':
             return {
+                ...state,
                 msg: "This is Redux"
             }
         default:
