@@ -8,16 +8,22 @@ import {
     BrowserRouter as Router,
     Route
 }from 'react-router-dom';
+import { createStore } from 'redux'
+import {Provider} from 'react-redux'
+import reducer from './reducer/reducer'
 
+let store = createStore(reducer)
 
 ReactDOM.render(
     (
-        <Router>
-            <div>
-                <Route exact path="/" component={App}/>
-                <Route path="/main" component={main}/>
-            </div>
-        </Router>
+        <Provider store = {store}>
+            <Router>
+                <div>
+                    <Route exact path="/" component={App}/>
+                    <Route path="/main" component={main}/>
+                </div>
+            </Router>
+        </Provider>
     ),
     document.getElementById('root')
 )
