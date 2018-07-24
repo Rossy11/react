@@ -2,7 +2,7 @@
  * Created by Rossy1 on 2018/7/23.
  */
 let initMsg={
-    msg:"默认数据"
+    msg:"默认数据哈"
 }
 const reducer = (state = initMsg, action) => {
     switch (action.type) {
