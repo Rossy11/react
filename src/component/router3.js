@@ -17,7 +17,7 @@ class router3 extends Component {
     }
 }
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
     return {
         message: state.msg
     }

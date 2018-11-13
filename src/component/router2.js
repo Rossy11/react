@@ -7,7 +7,7 @@ import axios from 'axios';
 
 class router2 extends Component {
     componentDidMount() {
-        axios.get("xxxxx").then(res => {
+        axios.get("http://14.119.109.232:30666/center/report/?cmd=income_info").then(res => {
             let list = res.data.result.group;
             list.sort((a,b)=>{
                 return b.index - a.index
@@ -91,7 +91,6 @@ class router2 extends Component {
             ]
         });
     }
-
     render() {
         return (
             <div id="main" className="echarts"></div>

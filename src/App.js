@@ -6,7 +6,7 @@ import {login} from './action/action'
 class App extends Component {
     clickLogin(event) {
         this.props.onchangeClick();
-        this.props.history.push("/main/router3");
+        this.props.history.push("/main/router1");
     }
     componentDidMount() {
         console.log(this.props)
@@ -20,15 +20,20 @@ class App extends Component {
     }
 }
 
-const mapStateToProps = (state, ownProps) => {
-    return {message: state.msg}
+const mapStateToProps = (state) => {
+    return {
+        message: state.msg
+    }
 }
-const mapDispatchToProps = (dispatch, ownProps) => {
-    return {onchangeClick: () => dispatch(login())}
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onchangeClick: () => dispatch(login())
+    }
 }
 export default connect(
     mapStateToProps,
     mapDispatchToProps
 )(App)
+
 
 

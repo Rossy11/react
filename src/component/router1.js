@@ -26,26 +26,25 @@ class router1 extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            allData: [], //总数据
             data: [], //表格当前页数据
             length: 0 //总数据长度
         }
     }
     componentDidMount() {
-        axios.get("xxxxxx").then(res => {
-            console.log(res.data);
+        this.getData(1)
+    }
+    getData(e){
+        axios.get("http://14.119.109.232:30666/UserInfo/?page="+e).then(res => {
+            let result=res.data;
             this.setState({
-                allData: res.data,
-                data: res.data.slice(0, 3),
-                length: res.data.length
+                data: result.results,
+                length: result.count
             });
         });
     }
     onChange(pageNumber) {
         console.log("Page: ", pageNumber);
-        this.setState({
-            data: this.state.allData.slice((pageNumber - 1) * 3, 3 * pageNumber)
-        });
+        this.getData(pageNumber)
     }
     clickRow(record){
         return {
@@ -58,7 +57,7 @@ class router1 extends Component {
         return (
             <div className="App">
                 <Table rowKey="UID" rowSelection={rowSelection} columns={columns} dataSource={this.state.data} onRow={this.clickRow}/>
-                <Pagination defaultCurrent={1} defaultPageSize={3} total={this.state.length} className="pages"
+                <Pagination defaultCurrent={1} defaultPageSize={10} total={this.state.length} className="pages"
                             showQuickJumper onChange={this.onChange.bind(this)}/>
             </div>
         )

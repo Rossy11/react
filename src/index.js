@@ -12,7 +12,7 @@ import { createStore } from 'redux'
 import {Provider} from 'react-redux'
 import reducer from './reducer/reducer'
 
-let store = createStore(reducer)
+let store = createStore(reducer);
 
 ReactDOM.render(
     (
@@ -28,4 +28,5 @@ ReactDOM.render(
     document.getElementById('root')
 )
 
+//用于在生产环境中为用户在本地创建一个service worker来缓存资源到本地，提升应用的访问速度
 registerServiceWorker();
