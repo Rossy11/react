@@ -34,7 +34,7 @@ class router1 extends Component {
         this.getData(1)
     }
     getData(e){
-        axios.get("http://14.119.109.232:30666/UserInfo/?page="+e).then(res => {
+        axios.get("xxx/?page="+e).then(res => {
             let result=res.data;
             this.setState({
                 data: result.results,
